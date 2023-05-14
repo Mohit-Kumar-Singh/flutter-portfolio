@@ -1,0 +1,6 @@
+2023/05/14-12:57:40.520 2f00 Creating DB C:\Users\mks61\AppData\Local\Temp\flutter_tools.c306b7c6\flutter_tools_chrome_device.8ebe7a05\Default\IndexedDB\https_www.instagram.com_0.indexeddb.leveldb since it was missing.
+2023/05/14-12:57:40.525 2f00 Reusing MANIFEST C:\Users\mks61\AppData\Local\Temp\flutter_tools.c306b7c6\flutter_tools_chrome_device.8ebe7a05\Default\IndexedDB\https_www.instagram.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/05/14-13:04:02.947 40d8 Level-0 table #5: started
+2023/05/14-13:04:02.949 40d8 Level-0 table #5: 6305 bytes OK
+2023/05/14-13:04:02.951 40d8 Delete type=0 #3
+2023/05/14-13:04:02.951 40d8 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:potrtfolio/Widget/CustomText.dart';
 
@@ -51,17 +52,29 @@ class About extends StatelessWidget {
                     SizedBox(
                       width: 12.0,
                     ),
-                    CustomText(
-                      text: "About Me",
-                      textsize: 26.0,
-                      color: Color(0xffCCD6F6),
-                      fontWeight: FontWeight.w700,
+                    AnimatedTextKit(
+                      totalRepeatCount: 10,
+                      pause: Duration(milliseconds: 180),
+                      animatedTexts: [
+                        TyperAnimatedText('About Our Project',
+                            speed: Duration(milliseconds: 250),
+                            textStyle: const TextStyle(
+                              color: Color(0xffCCD6F6),
+                              fontSize: 26,
+                            )),
+                      ],
                     ),
+                    // CustomText(
+                    //   text: "About Our Project",
+                    //   textsize: 26.0,
+                    //   color: Color(0xffCCD6F6),
+                    //   fontWeight: FontWeight.w700,
+                    // ),
                     SizedBox(
                       width: size.width * 0.01,
                     ),
                     Container(
-                      width: size.width / 4,
+                      width: size.width / 5,
                       height: 1.10,
                       color: Color(0xff303C55),
                     ),
@@ -77,89 +90,30 @@ class About extends StatelessWidget {
                   children: [
                     CustomText(
                       text:
-                          "Hello! I'm Mohit Kumar Singh, a b.Tech computer Science student.\n\nI enjoy creating UI/UX Designs that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect, performant experiences.\n\n",
-                      textsize: 16.0,
+                          "Malicious URLs host various unsolicited content and can pose a high threat to potential victims. Therefore, a fast and efficient detection technique is needed. In this project, we focus on the problem of detecting malicious URls based on the information obtained from URLs using machine-learning technologies. We proceeded in two steps. First, we created a tool that extracts Lexical-Features from the URL The use of such static features is safer and faster since it does not involve execution. Second, we trained and evaluated models using MultinomialNB, Logistic-Regression, and Random Forest. Later, we also used fuzzy string-matching approach. The efficiencyand accuracy of these models are measured and compared. The results are   showing the ability and suitability of tested technologies to predict the probability of a URL being malicious.",
+                      textsize: 20.0,
                       color: Color(0xff828DAA),
-                      letterSpacing: 0.75,
-                    ),
-                    CustomText(
-                      text:
-                          "currently, I am purshuing my Bachlor's degree in Computter science at AKGEC Gzb. , as well as practicing my developement and designing skills along with this i am lead coordinator in  the fine art soceity and Dicipline Committie of my college.\n\n",
-                      textsize: 16.0,
-                      color: Color(0xff828DAA),
-                      letterSpacing: 0.75,
-                    ),
-                    CustomText(
-                      text:
-                          "Here are a few skill set   i develoved over these years:\n\n",
-                      textsize: 16.0,
-                      color: Color(0xff828DAA),
-                      // fontWeight: FontWeight.w500,
-                      letterSpacing: 0.75,
+                      letterSpacing: 0.90,
                     ),
                   ],
-                ),
-
-                Container(
-                  height: size.height * 0.15,
-                  width: size.width,
-                  child: Wrap(
-                    children: [
-                      Container(
-                        width: size.width * 0.20,
-                        height: size.height * 0.15,
-                        child: Column(
-                          children: [
-                            technology(context, "C++"),
-                            technology(context, "DSA"),
-                            technology(context, "Flutter"),
-                            // technology(context, ""),
-                            technology(context, "Designing"),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: size.width * 0.15,
-                        height: size.height * 0.15,
-                        child: Column(
-                          children: [
-                            technology(context, "Leadership"),
-                            technology(context, "Manegerial"),
-                            technology(context, "Creativity"),
-                            technology(context, "Adaptiblity"),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
                 ),
               ],
             ),
           ),
 
-          //Profile Image
+          // Image
           Expanded(
             child: Container(
-              height: size.height / 1.5,
+              height: size.height / 2,
               width: size.width / 2 - 100,
               // color: Colors.white,
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  Positioned(
-                    top: size.height * 0.12,
-                    left: size.width * 0.120,
-                    child: Card(
-                      color: Color(0xff61F9D5),
-                      child: Container(
-                        margin: EdgeInsets.all(2.75),
-                        height: size.height / 2,
-                        width: size.width / 5,
-                        color: Color(0xff0A192F),
-                      ),
-                    ),
-                  ),
-                  CustomImageAnimation()
+                  Container(
+                      alignment: Alignment.center,
+                      child: Image(image: AssetImage("images/bg-111.png"))),
+                  // CustomImageAnimation()
                 ],
               ),
             ),
@@ -182,6 +136,7 @@ class _CustomImageAnimationState extends State<CustomImageAnimation> {
   // ignore: unused_field
   int _enterCounter = 0;
   // ignore: unused_field
+  bool img = false;
   int _exitCounter = 0;
   double x = 0.0;
   double y = 0.0;
@@ -202,6 +157,7 @@ class _CustomImageAnimationState extends State<CustomImageAnimation> {
   void _updateLocation(PointerEvent details) {
     setState(() {
       customImageColor = Colors.transparent;
+      bool img = true;
       x = details.position.dx;
       y = details.position.dy;
     });
@@ -220,10 +176,15 @@ class _CustomImageAnimationState extends State<CustomImageAnimation> {
             height: size.height / 2,
             width: size.width / 5,
             color: Colors.black54,
-            child: Image(
-              fit: BoxFit.cover,
-              image: AssetImage("images/mypic.jpeg"),
-            ),
+            child: _exitCounter % 2 == 0
+                ? Image(
+                    fit: BoxFit.cover,
+                    image: AssetImage("images/AKG.png"),
+                  )
+                : Image(
+                    fit: BoxFit.cover,
+                    image: AssetImage("images/mypic.jpeg"),
+                  ),
           ),
           Container(
             height: size.height / 2,

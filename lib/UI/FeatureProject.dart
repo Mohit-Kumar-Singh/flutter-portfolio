@@ -128,37 +128,42 @@ class FeatureProject extends StatelessWidget {
                         SizedBox(
                           width: 16.0,
                         ),
-                        CustomText(
-                          text: tech3 == null ? "" : tech3,
-                          textsize: 14,
-                          color: Colors.grey,
-                          letterSpacing: 1.75,
+                        IconButton(
+                          icon: FaIcon(FontAwesomeIcons.link),
+                          color: Colors.white.withOpacity(0.3),
+                          onPressed: ontab,
                         ),
+                        // CustomText(
+                        //   text: tech3 == null ? "" : tech3,
+                        //   textsize: 14,
+                        //   color: Colors.grey,
+                        //   letterSpacing: 1.75,
+                        // ),
                       ],
                     ),
                   ),
                 ),
 
-                // Gitub Link
-                Positioned(
-                  top: size.height * 0.42,
-                  right: 10.0,
-                  child: Container(
-                    height: size.height * 0.08,
-                    width: size.width * 0.25,
-                    // color: Colors.indigo,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        IconButton(
-                          icon: FaIcon(FontAwesomeIcons.github),
-                          color: Colors.white.withOpacity(0.3),
-                          onPressed: ontab,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                // // Gitub Link
+                // Positioned(
+                //   top: size.height * 0.42,
+                //   right: 10.0,
+                //   child: Container(
+                //     height: size.height * 0.08,
+                //     width: size.width * 0.25,
+                //     // color: Colors.indigo,
+                //     child: Row(
+                //       mainAxisAlignment: MainAxisAlignment.end,
+                //       children: [
+                //         IconButton(
+                //           icon: FaIcon(FontAwesomeIcons.link),
+                //           color: Colors.white.withOpacity(0.3),
+                //           onPressed: ontab,
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),

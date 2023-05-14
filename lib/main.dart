@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MOHIT KUMAR SINGH',
+      title: 'Malicious URL Detector',
       debugShowCheckedModeBanner: false,
       home: Home(),
     );
